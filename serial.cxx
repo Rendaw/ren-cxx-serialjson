@@ -2,7 +2,7 @@
 
 #include <cstring>
 
-#include "extrastandard.h"
+#include "../ren-cxx-basics/extrastandard.h"
 #include "math.h"
 
 static char const StringPrefix[] = "utf8:";
@@ -592,7 +592,6 @@ ReadErrorT ReadT::Parse(Filesystem::PathT const &Path)
 	{
 		uint8_t ReadBuffer[65536];
 		auto ReadSize = fread(reinterpret_cast<char *>(ReadBuffer), 1, sizeof(ReadBuffer) - 1, File);
-		std::cout << "read [" << std::string((char const *)ReadBuffer, ReadSize) << "] " << ReadSize << std::endl;
 		if (ReadSize == 0)
 		{
 			auto Result = yajl_complete_parse(Base);

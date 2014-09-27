@@ -1,1 +1,5 @@
-SerialJSONObjects = Define.Objects{ Sources = Item '*.cxx' }
+SerialJSONObjects = Define.Objects
+{ 
+	Sources = Item '*.cxx',
+	BuildFlags = '-fPIC'
+}
